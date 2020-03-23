@@ -1,0 +1,36 @@
+\problemname{Cities of Finland}
+
+\illustration{.2}{finland}{Photo by \href{https://www.mapsopensource.com}{mapsopensource.com}}
+You're a cartographer tasked with designing a new political map of Finland. In order 
+to make your map easy to read, you've decided to group cities by their population.
+Larger cities will have larger fonts and smaller cities will have smaller fonts.
+
+In order for this scheme to work, you need a metric to divide the cities into population
+ranges that reflect their relative size. You want your ranges to reflect how big cities
+are relative to one another, so similarly sized cities should be members of the
+same range. In order to get the best ranges possible, you want to minimize the total
+standard deviation over all of the ranges.
+
+For a given range of cities \(k = k_1, k_2, ..., k_m\) (where \(k_i\) is the population
+of the ith city) the average population is \[\bar{k} = \frac{\sum_{i = 1}^m k_i}{m}.\]
+
+The standard deviation for that range can be calculated as follows
+\[\sqrt{\frac{\sum_{i = 1}^m (k_i - \bar{k})^2}{m}}.\]
+\section*{Input}
+The first line contains two space separated integers \(c\) and \(n\) (\(1 \leq
+c \leq 100\) and \(c \leq n \leq 500\)) where \(c\) is the number of ranges to divide
+the \(n\) cities. The following \(n\) lines contain city descriptions with a city name
+and population. All city names are unique. All populations are in the range \(1 \leq p
+\leq 10^6\)
+
+In the sample input, we want to divide 8 towns into three ranges. The best way to
+do this groups the four small towns (Lappeenranta, Rovaniemi, Pori, and Joensu) and
+the three medium sized towns (Tampere, Turku, and Oulu) leaving Helsinki in a range
+by itself.
+
+\section*{Output}
+Print, in ascending order, the population ranges with the minimum total standard deviation
+(there should be \(c\) lines of output). 
+There will be one unique solution. The first range starts at \(0\) and goes to
+the maximum population in that range. Every other range starts one past the last
+range's maximum.

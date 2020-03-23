@@ -1,0 +1,7 @@
+source: Baylor Competitive Learning Course Fall 2017
+author: Andrew J. Kronser
+license: cc by-sa
+
+limits:
+    time_multiplier: 1.2
+    time_safety_margin: 2
